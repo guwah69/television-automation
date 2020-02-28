@@ -18,12 +18,7 @@ module.exports = {
         let options = await element(by.id('product_listing_sorter')).
         all(by.tagName('option'));
 
-        options.getAttribute().click('selected');
+        options[2].click('selected');
     },
 
-    assertSelected: async (sort) => {
-        let values = await element(by.id('product_listing_sorter')).
-        all(by.tagName('option')).getAttribute('selected');
-        expect(values[2]).to.equal(sort);
-    }
 };
